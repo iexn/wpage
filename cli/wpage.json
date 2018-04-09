@@ -1,0 +1,14 @@
+{
+  "url_remark": "页面路由",
+  "url": {
+    "/": "index.html"
+  },
+  "source_ext_remark": "资源文件识别后缀：content-type类型",
+  "source_ext": {
+    ".ico": "image/x-icon",
+    ".css": "text/css",
+    ".js": "application/javascript",
+    ".png": "image/png",
+    ".jpg": "image/jpeg"
+  }
+}

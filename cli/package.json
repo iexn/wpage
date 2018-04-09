@@ -1,0 +1,20 @@
+{
+  "name": "wpage_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "wpage": "^1.0.1"
+  },
+  "dependencies": {
+    "node-watch": "^0.5.8",
+    "watch": "^1.0.2",
+    "ws": "^5.1.1"
+  }
+}
