@@ -10,11 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "wpage": "^1.0.3"
-  },
-  "dependencies": {
     "node-watch": "^0.5.8",
     "watch": "^1.0.2",
+    "wpage": "^1.0.4",
     "ws": "^5.1.1"
   }
 }
