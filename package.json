@@ -1,13 +1,13 @@
 {
   "name": "wpage",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "keywords": [
-    "wpage"
+    "wpage",
+    "web",
+    "html"
   ],
   "author": {
     "name": "iexn",
@@ -19,5 +19,9 @@
   },
   "bin": {
     "wpage": "./bin/wpage.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iexn/wpage"
   }
 }
