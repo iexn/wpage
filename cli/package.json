@@ -12,7 +12,7 @@
   "devDependencies": {
     "node-watch": "^0.5.8",
     "watch": "^1.0.2",
-    "wpage": "^1.0.4",
+    "wpage": "^1.0.7",
     "ws": "^5.1.1"
   }
 }
