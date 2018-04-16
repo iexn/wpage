@@ -4,6 +4,18 @@
 > npm install -g wpage
 
 
+#### 1.1.2更新
++ 支持sass文件自动编译（在已安装sass的前提下）
+`wpage.json`中配置编译css文件类型：
+```
+"sass_style": "compact"
+```
+支持四个属性值：
+> `nested` 嵌套输出方式
+> `expanded` 展开输出方式
+> `compact` 紧凑输出方式
+> `compressed` 压缩输出方式
+
 ---
 
 

@@ -1,8 +1,9 @@
 {
   "url": {
     "/": "index.html",
-    "/index.html": "page.html"
+    "/index.html": "index.html"
   },
+  "sass_style": "compact",
   "source_ext": {
     ".ai":"application/postscript",
     ".edi":"application/EDIFACT",

@@ -10,9 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "child_process": "^1.0.2",
     "node-watch": "^0.5.8",
+    "path": "^0.12.7",
     "watch": "^1.0.2",
-    "wpage": "^1.0.7",
+    "wpage": "^1.1.2",
     "ws": "^5.1.1"
   }
 }
