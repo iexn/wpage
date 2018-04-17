@@ -1,7 +1,7 @@
 这是一个能让你开发静态页面时，搭建本地服务器和及时刷新浏览器预览功能的包
 
 安装：
-> npm install -g wpage
+> npm install wpage
 
 
 #### 1.1.2更新
