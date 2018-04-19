@@ -3,9 +3,11 @@
 安装：
 > npm install wpage
 
+#### 1.1.9更新
++ 支持babel文件自动编译，.babel文件会在相同目录下自动编译为.js文件
 
 #### 1.1.2更新
-+ 支持sass文件自动编译（在已安装sass的前提下）
++ 支持sass文件自动编译，.sass或.scss文件会在相同目录下自动编译为.css文件（在已安装sass的前提下）
 `wpage.json`中配置编译css文件类型：
 ```
 "sass_style": "compact"
@@ -16,40 +18,9 @@
 > `compact` 紧凑输出方式
 > `compressed` 压缩输出方式
 
----
-
-
-使用：
-cd到指定目录下执行命令
-
-> // 创建项目，假设project为新建的项目名称
-> wpage project
-> 
-> // 进入项目
-> cd project
->
-> // 安装依赖
-> npm install 
->
-> // 开启本地服务器
-> npm start
 
 
 ---
-
-
-进入项目文件内容如下：
-
-| 文件 | 说明 |
-| - | - |
-| src | 项目开发目录 | 
-| package.json | 如有必要更新其他依赖包 |
-| server.js | wpage服务入口 |
-| wpage.json | wpage路由定义文件 |
-
-
----
-
 
 `wpage.js` 中主要包含内容如下：
 
