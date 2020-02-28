@@ -1,1 +1,2 @@
-module.exports = require('./lib/server')
+require("./extend/babel");
+module.exports = require("./lib");

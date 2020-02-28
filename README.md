@@ -1,15 +1,88 @@
+> 注意：1.x版本与当前版本用法不同。如需使用1.x版本，请前往历史发布版本进行查看，或直接执行 `npm install -g wpage-cli`
+
 这是一个能让你开发静态页面时，搭建本地服务器和及时刷新浏览器预览功能的包
 
 安装：
 ```
-npm install -g wpage-cli
+npm install -g wpage
 ```
+
+功能：
+
+1. 开启一个本地服务器
+
+2. 对文件进行监听，如有变动刷新浏览器
+
+3. scss和babel后缀的文件会生成编译后的同名不同后缀的新文件
 
 使用方法：
 
+1. 切换到需要使用wpage的目录，执行`wpage start`即可开启wpage服务。
+
+2. 如果需要对不想向浏览器发送刷新通知的文件进行排除，可以在顶级目录下创建文件`.wpagerc.json`：
+
+```
+{
+    "ignore": []
+}
+```
+
+排除规则参考 npm ignore 包进行设置。
+
+如：
+
+```
+{
+    "ignore": [
+        "demo.js"
+    ]
+}
+```
+
+会排除掉demo.js文件。
+
+> 注意：系统默认强制添加了 `node_modules/` `.git/` `.wpagerc.json`三项排除规则，项目中可不必填写
+
+3. .wpagerc.json 文件中可设置sass的编译方式：
+
+```
+// 支持四个属性值：
+// `nested` 嵌套输出方式
+// `expanded` 展开输出方式
+// `compact` 紧凑输出方式
+// `compressed` 压缩输出方式
+
+"sass_style": "nested"
+```
+
+4. CLI：
+
+> wpage start
+
+开启wpage服务
+
+> wpage init [project name]
+
+创建一个文件夹，并自动添加`.wpagerc.json`规则文件
+
+5. 机制（与1.x相比）：
+
+    1. 系统对在浏览器中打开的html后缀的文件追加websocket代码，而其他后缀的文件没有。
+
+    2. 增加了可排除刷新的文件设置 ignore。
+
+    3. sass和babel后缀文件因为有扩展功能，所以他们的文件变化并不会通知给浏览器。
+
+    4. 现在可以开启多个wpage服务了，端口号并不会提示占用。
+
+    5. favicon.ico 文件不设置时在命令行中会有文件不存在的提示，现在已经排除了这个提示
+
+    6. 系统提示信息已改为中文
+
+
 1. 打开命令行工具，cd到任意文件夹下，执行以下命令：
 ```
-wpage project 
+wpage project
 
 cd project
 
@@ -37,52 +110,8 @@ npm start
   // 默认访问地址，默认为index.html。注意：不要填写前面的 /
   "default": "index.html",
   // 资源文件后缀名，一般情况下不需要改动
-  "source_ext": { 
+  "source_ext": {
     ".js": "application/ecmascript" // 后缀名：资源识别content-type
   }
 }
 ```
-
-
-
-
-
-
-------
-### 更新日志：
-
-#### 1.2.1更新
-* 取消强制在wpage.json中定义url的访问机制，改为设置页面后缀名去访问
-+ 监听文件不存在导致的页面必须刷新后才能使用。页面不存在依然继续监听
-* wpage.json中增加了 `ext` 与 `default` 参数，具体如下：
-```
-  // 设置此项后，所有后缀名在这里出现的访问内容均视为页面。数组形式添加，默认为.html
-  "ext": [".html"],
-  // 默认访问地址，默认为index.html。注意：不要填写前面的 /
-  "default": "index.html",
-```
-
-#### 1.1.13更新
-* 更新文档等帮助内容
-
-#### 1.1.11更新
-* 修复在非本机设备访问项目时造成保存文件不能及时刷新网页的bug
-
-#### 1.1.10更新
-* 修复git创建在src目录中时，对项目的重新加载bug
-
-#### 1.1.9更新
-+ 支持babel文件自动编译，.babel文件会在相同目录下自动编译为.js文件
-
-#### 1.1.2更新
-+ 支持sass文件自动编译，.sass或.scss文件会在相同目录下自动编译为.css文件（在已安装sass的前提下）
-`wpage.json`中配置编译css文件类型：
-```
-"sass_style": "compact"
-```
-支持四个属性值：
-> `nested` 嵌套输出方式
-> `expanded` 展开输出方式
-> `compact` 紧凑输出方式
-> `compressed` 压缩输出方式
-

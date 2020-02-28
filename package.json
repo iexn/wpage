@@ -1,9 +1,12 @@
 {
   "name": "wpage",
-  "version": "1.2.5",
+  "version": "2.0.0-beta1",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "wpage start",
+    "build": "wpage project"
+  },
   "keywords": [
     "wpage",
     "web",
@@ -15,13 +18,26 @@
   },
   "license": "ISC",
   "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "child_process": "^1.0.2",
     "commander": "^2.15.1",
+    "ignore": "^5.1.4",
+    "lodash": "^4.17.15",
+    "node-sass": "^4.13.1",
     "node-watch": "^0.5.8",
+    "os": "^0.1.1",
     "ws": "^5.1.1"
+  },
+  "bin": {
+    "wpage": "./bin/wpage.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/iexn/wpage"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
   }
 }
