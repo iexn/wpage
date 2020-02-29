@@ -1,9 +1,8 @@
-import path from "path"
-import sass from "./sass"
-import babel from "./babel"
-import Util from "../util"
+const path = require("path")
+const sass = require("./sass")
+const babel = require("./babel")
 
-export default {
+module.exports = {
     exec: function (src) {
         let ext = path.extname(src).slice(1)
         let plugin = {

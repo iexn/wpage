@@ -1,6 +1,6 @@
-import fs from "fs"
-import path from "path"
-import Log from "../lib/log"
+const fs = require("fs")
+const path = require("path")
+const Log = require("../lib/log")
 
 let copyFile = function (srcPath, tarPath, cb) {
     let rs = fs.createReadStream(srcPath)

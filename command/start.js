@@ -1,7 +1,7 @@
-import Log from "../lib/log"
-import Server from "../lib/server"
+const Log = require("../lib/log")
+const Server = require("../lib/server")
 
-export default function () {
+module.exports = function () {
     Server.listen(function (port) {
         Log.remind(port)
     })
