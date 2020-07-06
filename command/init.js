@@ -71,7 +71,7 @@ module.exports = function (copy_path) {
         return false
     }
     Log.print(`wpage正在运行中...`)
-    copyFolder("../example/", copy_path, function (err) {
+    copyFolder(__dirname + "/../example/", copy_path, function (err) {
         if (err) {
             throw err
         }

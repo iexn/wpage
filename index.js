@@ -1,1 +1,5 @@
-module.exports = require("./lib");
+const start = require("./command/start");
+
+module.exports = {
+    start: require("./command/start")
+};

@@ -78,3 +78,10 @@ npm install -g wpage
     5. favicon.ico 文件不设置时在命令行中会有文件不存在的提示，现在已经排除了这个提示
 
     6. 系统提示信息已改为中文
+
+
+---
+
+2.0.3更新：
+
+1. 修复bug，增加模块内调用`wpage.start()`，等效于cli：`wpage start`
