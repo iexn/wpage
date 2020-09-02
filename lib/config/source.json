@@ -236,7 +236,7 @@
     ".rt":"text/vnd.rn-realtext",
     ".sol":"text/plain",
     ".spp":"text/xml",
-    ".svg":"text/xml",
+    ".svg":"image/svg+xml",
     ".tld":"text/xml",
     ".txt":"text/plain",
     ".uls":"text/iuls",

@@ -17,45 +17,69 @@ npm install -g wpage
 
 使用方法：
 
-1. 切换到需要使用wpage的目录，执行`wpage start`即可开启wpage服务。
+1. 在当前目录下启动服务：
 
-2. 如果需要对不想向浏览器发送刷新通知的文件进行排除，可以在顶级目录下创建文件`.wpagerc.json`：
+   命令行内开启服务：`wpage start`
 
-```
-{
-    "ignore": []
-}
-```
+   代码内开启服务：`wpage.start()`
 
-排除规则参考 npm ignore 包进行设置。
+2. 开启服务根目录下创建配置文件`.wpagerc.json`：
 
-如：
+   ```
+   {
+   	"ignore": [],
+   	"sass_style": "",
+   	"dir": "",
+   	"sourceContentType": {}
+   }
+   ```
 
-```
-{
-    "ignore": [
-        "demo.js"
-    ]
-}
-```
+   - `ignore`
 
-会排除掉demo.js文件。
+     如果不想让部分文件发生变化时浏览器刷新，可以在这里配置不刷新文件。遵循ignore文件配置规则，比如：
 
-> 注意：系统默认强制添加了 `node_modules/` `.git/` `.wpagerc.json`三项排除规则，项目中可不必填写
+     ```
+     "ignore": [
+     	"node_modules/",
+         ".git/",
+         ".wpagerc.json"
+     ]
+     ```
 
-3. .wpagerc.json 文件中可设置sass的编译方式：
+     以上配置项已经添加到`wpage`的默认配置里了，我们无需在配置文件中添加他们。
 
-```
-// 支持四个属性值：
-// `nested` 嵌套输出方式
-// `expanded` 展开输出方式
-// `compact` 紧凑输出方式
-// `compressed` 压缩输出方式
+   - `sass_style`
 
-"sass_style": "nested"
-```
+     这个配置项决定了`.scss`后缀文件编译后的代码格式，与sass的代码格式配置相同：
 
-4. CLI：
+     ```
+     nested
+     expanded
+     compact
+     compressed
+     ```
+
+     默认值是`nested`。
+
+   - `dir`
+
+     这个配置项允许我们对任意目录开启服务，而不是在当前目录。
+
+   - `sourceContentType`
+
+     由于系统的原因，在开发过程中需要设置不同格式文件的`Content-Type`。`wpage`已经对大多数格式做了处理，如果设置的不对或者使用其他格式的文件时，需要在`sourceContentType`中添加对应格式的`Content-Type`，例如：
+
+     ```
+     "sourceContentType": {
+     	".svg": "image/svg+xml"
+     }
+     ```
+
+     当然上面的值也是默认配置，我们无需再次添加。
+
+     
+
+3. CLI：
 
 > wpage start
 
@@ -65,23 +89,23 @@ npm install -g wpage
 
 创建一个文件夹，并自动添加`.wpagerc.json`规则文件
 
-5. 机制（与1.x相比）：
+4. 机制（与1.x相比）：
+   1. 系统对在浏览器中打开的html后缀的文件追加websocket代码，而其他后缀的文件没有。
 
-    1. 系统对在浏览器中打开的html后缀的文件追加websocket代码，而其他后缀的文件没有。
-
-    2. 增加了可排除刷新的文件设置 ignore。
-
-    3. sass和babel后缀文件因为有扩展功能，所以他们的文件变化并不会通知给浏览器。
-
-    4. 现在可以开启多个wpage服务了，端口号并不会提示占用。
-
-    5. favicon.ico 文件不设置时在命令行中会有文件不存在的提示，现在已经排除了这个提示
-
-    6. 系统提示信息已改为中文
+   2. 增加了可排除刷新的文件设置 ignore。
+   3. sass和babel后缀文件因为有扩展功能，所以他们的文件变化并不会通知给浏览器。
+   4. 现在可以开启多个wpage服务了，端口号并不会提示占用。
+   5. favicon.ico 文件不设置时在命令行中会有文件不存在的提示，现在已经排除了这个提示
+   6. 系统提示信息已改为中文
 
 
 ---
 
+2.0.4更新：
+
+1. 修改`.svg`文件的默认`Content-type=image/svg+xml`
+
 2.0.3更新：
 
 1. 修复bug，增加模块内调用`wpage.start()`，等效于cli：`wpage start`
+
