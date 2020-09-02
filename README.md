@@ -101,7 +101,7 @@ npm install -g wpage
 
 ---
 
-2.0.4更新：
+2.0.6更新：
 
 1. 修改`.svg`文件的默认`Content-type=image/svg+xml`
 
