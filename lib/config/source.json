@@ -4,6 +4,7 @@
     ".json":"application/json",
     ".ogg":"application/ogg",
     ".woff":"application/font-woff",
+    ".ttf":"application/font-ttf",
     ".xml":"application/xml",
     ".zip":"application/zip",
     ".gzip":"application/gzip",
