@@ -53,9 +53,7 @@ npm install -g wpage
      这个配置项决定了`.scss`后缀文件编译后的代码格式，与sass的代码格式配置相同：
 
      ```
-     nested
      expanded
-     compact
      compressed
      ```
 

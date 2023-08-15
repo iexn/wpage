@@ -1,11 +1,11 @@
 const path = require("path")
 const fs = require("fs")
-const sass = require("node-sass")
+const sass = require("sass")
 const Config = require("../../lib/config")
 const Log = require("../../lib/log")
 
 module.exports = function (src) {
-    let outputStyle = Config.sass_style || 'nested'
+    let outputStyle = Config.sass_style || 'compressed'
 
     let compassSrc = src.slice(0, -1 * path.extname(src).length) + ".css"
 
